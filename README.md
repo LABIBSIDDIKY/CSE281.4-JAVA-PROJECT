@@ -59,3 +59,68 @@ Encapsulated Modules: each class handles a defined responsibility to reduce coup
 
 
 
+🧠 Methodology
+1. Requirement Analysis
+Understand the problem of lost and found tracking within the university.
+Define user roles: User and Admin.
+Specify functional requirements (report, search, claim, verify).
+2. System Design
+Frontend: Built using Java Swing with JTabbedPane separating the main functions.
+Backend Services: ItemService and ClaimService handle data operations and validations.
+Exception Handling: Custom exceptions (InvalidClaimException, DuplicateItemException, etc.) ensure robust error reporting.
+
+
+3. Object Model
+   
+|CLASS                    |DESCRIPTION                                                                          |
+--------------------------|-------------------------------------------------------------------------------------|
+|Item (abstract)          |Base class defining shared item fields.                                              |
+| LostItem                |Extends Item with lostLocation, rewardOffered, contactInfo.                          |
+| FoundItem               |Extends Item with foundLocation, storedAt, currentHolder.                            |
+| User                    |Holds personal details and item-related actions.                                     |
+| Admin                   |Inherits from User with additional privileges (approve/reject claims).               |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
+
+
+
+4. Implementation
+Developed in Java SE using OOP design.
+Uses try-catch blocks and custom exceptions for input safety.
+GUI forms mapped to backend services ensuring smooth communication.
+5. Testing & Validation
+GUI event functions validated for both success and error scenarios.
+Admin claim approval workflow tested with edge cases (duplicate items, missing user IDs).
+
+
+🧮 Functional Modules
+Register Lost Items — users register details of missing belongings.
+Register Found Items — record items discovered on campus.
+Search Records — keyword/category/date filters.
+Submit Claims — users claim an item believed to be theirs.
+Admin Dashboard — manage items, view activity logs, approve/deny claims.
+
+
+💡 Exception Handling
+Custom exceptions ensure data validity and user feedback:
+
+DuplicateItemException → when adding an existing item.
+InvalidClaimException → when re-claiming an already approved item.
+EmptyFieldException → when form fields are missing.
+UserNotFoundException → thrown on invalid login or user ID.
+Friendly user-facing messages shown via JOptionPane.
+
+
+
+
+🧾 Conclusion
+The Lost and Found Management System successfully demonstrates all essential OOP and Java programming principles while solving a real-world problem on campus. It provides an organized, scalable, and user-centered solution for managing lost and found items efficiently.
+
+This project serves as a model for structured software design — effectively integrating object-oriented programming with GUI development and robust exception management.
+
+
+
+🔮 Future Enhancements
+Integration with MySQL or SQLite for persistent database storage.
+Add email notifications for claim status updates.
+Implement image upload for item verification.
+Extend system to a web or mobile platform for cross-device accessibility.
