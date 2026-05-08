@@ -6,7 +6,7 @@ Assignment: CSE281 JAVA GROUP PROJECT
 Course: CSE 281.4 - PROGRAMMING LANGUAGE II (JAVA)
 
 
-👥 Group EXCEED
+👥 Group Tehreek e Muhandis
 
 | SL | Student Name              | ID          |
 |----|--------------------------|--------------|
