@@ -1,5 +1,5 @@
 MIT License
-Copyright (c) 2026 (EXCEED)
+Copyright (c) 2026 (Tehreek e Muhandis)
 Department of Computer Science & Engineering
 Southeast University, Bangladesh
 
@@ -37,4 +37,4 @@ Course CSE 281 (JAVA).
     a violation of the University's Academic Integrity Policy.
 
 3.  **Attribution:** Any legitimate educational use of this codebase must 
-    include proper citation of the original authors (GROUP EXCEED) .
+    include proper citation of the original authors (Tehreek e Muhandis) .
