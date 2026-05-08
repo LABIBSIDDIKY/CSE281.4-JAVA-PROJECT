@@ -18,7 +18,7 @@ Course: CSE 281.4 - PROGRAMMING LANGUAGE II (JAVA)
 
 
 
-🧩 Project Overview
+🖱️ Project Overview
 The Lost and Found Management System (LFMS) is a Java desktop application designed to streamline the process of reporting, tracking, and returning misplaced items within a university or institutional campus.
 
 The system centralizes all reports of lost and found items, allowing users to:
@@ -30,7 +30,7 @@ Administer workflows through verification, approval, or rejection of claims.
 
 
 
-🎯 Project Objectives
+🖱️ Project Objectives
 Create a centralized database for lost and found items.
 Implement all four OOP principles (Encapsulation, Abstraction, Inheritance, Polymorphism).
 Provide a smooth graphical user interface using Java Swing.
@@ -39,7 +39,7 @@ Ensure admins have full control over stored records and claims.
 
 
 ⚙️ System Theory
-In most institutions, managing lost and found items is handled informally — through notices or social media posts. This leads to loss of accountability and mismatched claims. LFMS overcomes these issues through:
+In most institutions, managing lost and found items is handled informally through notices or social media posts. This leads to loss of accountability and mismatched claims. LFMS overcomes these issues through:
 
 Object-Oriented Architecture: clear class relationships (Item, User, Admin, ClaimRequest).
 Structured Data Flow: from user input → validation → database → admin verification.
@@ -59,7 +59,7 @@ Encapsulated Modules: each class handles a defined responsibility to reduce coup
 
 
 
-🧠 Methodology
+🖱️ Methodology
 1. Requirement Analysis
 Understand the problem of lost and found tracking within the university.
 Define user roles: User and Admin.
@@ -115,11 +115,11 @@ Friendly user-facing messages shown via JOptionPane.
 🧾 Conclusion
 The Lost and Found Management System successfully demonstrates all essential OOP and Java programming principles while solving a real-world problem on campus. It provides an organized, scalable, and user-centered solution for managing lost and found items efficiently.
 
-This project serves as a model for structured software design — effectively integrating object-oriented programming with GUI development and robust exception management.
+This project serves as a model for structured software design effectively integrating object-oriented programming with GUI development and robust exception management.
 
 
 
-🔮 Future Enhancements
+⏳ Future Enhancements
 Integration with MySQL or SQLite for persistent database storage.
 Add email notifications for claim status updates.
 Implement image upload for item verification.
