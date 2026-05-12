@@ -7,19 +7,19 @@ public class claimRequest {
     private String claimId;
     private String userId;
     private String itemId;
-    private ClaimStatus status;
+    private claimStatus status;
     private LocalDate submittedDate;
 
     public claimRequest(String claimId,
                         String userId,
                         String itemId,
-                        LocalDate submittedDate) {
+                        claimStatus pending, LocalDate submittedDate) {
 
         this.claimId = claimId;
         this.userId = userId;
         this.itemId = itemId;
         this.submittedDate = submittedDate;
-        this.status = ClaimStatus.PENDING;
+        this.status = claimStatus.PENDING;
     }
 
     public String getClaimId() {
@@ -34,16 +34,16 @@ public class claimRequest {
         return itemId;
     }
 
-    public ClaimStatus getStatus() {
+    public claimStatus getStatus() {
         return status;
     }
 
     public void approveClaim() {
-        status = ClaimStatus.APPROVED;
+        status = claimStatus.APPROVED;
     }
 
     public void rejectClaim() {
-        status = ClaimStatus.REJECTED;
+        status = claimStatus.REJECTED;
     }
 
     public LocalDate getSubmittedDate() {
