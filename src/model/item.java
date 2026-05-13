@@ -28,6 +28,10 @@ public abstract class item {
         return name;
     }
 
+    public String getDescription() {
+    return description;
+    }
+
     public String getCategory() {
         return category;
     }
