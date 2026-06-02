@@ -1,2 +1,3 @@
 FOUND,F1780416727274,Aquatica,fefaes,raeras,2024-11-24,fadsfa,fasdfa,asfasd
 LOST,L1780417171617,Marwa,fdafsad,faefsa,2024-11-12,fdaf,true,fadfasd
+LOST,L1780418653174,Lotion,Half empty,Cosmetics,2026-11-22,Washroom,false,01877723406

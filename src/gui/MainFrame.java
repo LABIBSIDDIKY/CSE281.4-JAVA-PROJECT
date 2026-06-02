@@ -1,5 +1,6 @@
 package gui;
 
+import service.claimService;
 import service.itemService;
 
 import javax.swing.*;
@@ -10,6 +11,7 @@ public class MainFrame extends JFrame {
     private JPanel contentPanel;
     private CardLayout cardLayout;
     private itemService itemService;
+    private claimService claimService;
 
     public MainFrame() {
         setTitle("Lost & Found Management System");
@@ -18,6 +20,7 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
 
         itemService = new itemService();
+        claimService = new claimService();
 
         JPanel root = new JPanel(new BorderLayout(24, 24));
         root.setBackground(new Color(226, 226, 222));
@@ -31,8 +34,8 @@ public class MainFrame extends JFrame {
         contentPanel.add(new RegisterLostItemPanel(itemService), "lost");
         contentPanel.add(new RegisterFoundItemPanel(itemService), "found");
         contentPanel.add(new SearchPanel(itemService), "search");
-        contentPanel.add(createPlaceholderPage("Claims"), "claims");
-        contentPanel.add(new AdminPanel(itemService), "admin");
+        contentPanel.add(new ClaimPanel(claimService), "claims");
+        contentPanel.add(new AdminPanel(itemService, claimService), "admin");
 
         root.add(createSidebar(), BorderLayout.WEST);
         root.add(contentPanel, BorderLayout.CENTER);
@@ -81,7 +84,34 @@ public class MainFrame extends JFrame {
             button.setForeground(new Color(35, 35, 35));
         }
 
-        button.addActionListener(e -> cardLayout.show(contentPanel, page));
+        button.addActionListener(e -> {
+            if (page.equals("admin")) {
+                JPasswordField passwordField = new JPasswordField();
+
+                int option = JOptionPane.showConfirmDialog(
+                        this,
+                        passwordField,
+                        "Enter Admin Password",
+                        JOptionPane.OK_CANCEL_OPTION,
+                        JOptionPane.PLAIN_MESSAGE
+                );
+
+                if (option == JOptionPane.OK_OPTION) {
+                    String password = new String(passwordField.getPassword());
+
+                    if (password.equals("admin123")) {
+                        cardLayout.show(contentPanel, page);
+                    } else {
+                        JOptionPane.showMessageDialog(
+                                this,
+                                "Incorrect admin password."
+                        );
+                    }
+                }
+            } else {
+                cardLayout.show(contentPanel, page);
+            }
+        });
 
         return button;
     }
