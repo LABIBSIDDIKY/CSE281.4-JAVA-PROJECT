@@ -1,32 +1,37 @@
 package service;
 
+import exception.EmptyFieldException;
+import exception.UserNotFoundException;
 import model.user;
+
 import java.util.ArrayList;
 
 public class authService {
 
-    private ArrayList<user> userArr;
+    private ArrayList<user> users;
 
-    public authService(ArrayList<user> userArr) {
-
-        this.userArr = userArr;
+    public authService(ArrayList<user> users) {
+        this.users = users;
     }
 
-    public user login(String email, String password) {
+    public user login(String email, String password)
+            throws EmptyFieldException, UserNotFoundException {
 
-        for (user user : userArr) {
+        if (email == null || email.trim().isEmpty()) {
+            throw new EmptyFieldException("Email cannot be empty.");
+        }
 
+        if (password == null || password.trim().isEmpty()) {
+            throw new EmptyFieldException("Password cannot be empty.");
+        }
+
+        for (user user : users) {
             if (user.getEmail().equals(email)
                     && user.getPassword().equals(password)) {
-
-                System.out.println("Login successful!");
-
                 return user;
             }
         }
 
-        System.out.println("Invalid email or password!");
-
-        return null;
+        throw new UserNotFoundException("Invalid email or password.");
     }
 }
