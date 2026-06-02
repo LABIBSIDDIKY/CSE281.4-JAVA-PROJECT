@@ -74,11 +74,19 @@ Exception Handling: Custom exceptions (InvalidClaimException, DuplicateItemExcep
    
 |CLASS                    |DESCRIPTION                                                                          |
 --------------------------|-------------------------------------------------------------------------------------|
-|Item (abstract)          |Base class defining shared item fields.                                              |
+| Item (abstract)         |Base class defining shared item fields.                                              |
 | LostItem                |Extends Item with lostLocation, rewardOffered, contactInfo.                          |
 | FoundItem               |Extends Item with foundLocation, storedAt, currentHolder.                            |
 | User                    |Holds personal details and item-related actions.                                     |
 | Admin                   |Inherits from User with additional privileges (approve/reject claims).               |
+| ClaimStatus             |To verify if the item has been claimed, Approved or Pending                          |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| authService             | To make sure that users don't accidentally get admin access                         |
+| ClaimService            |Making sure that the claim process is well documented and valid                      |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| ClaimRequest            |Links users and items through claim processing and validation.                       |
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
 
 
