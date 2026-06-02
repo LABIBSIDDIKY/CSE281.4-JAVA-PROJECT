@@ -1,34 +1,52 @@
 package service;
 
+import exception.EmptyFieldException;
+import exception.UserNotFoundException;
 import model.user;
 
 import java.util.ArrayList;
 
 public class userService {
 
-    private ArrayList<user> userArr = new ArrayList<>();
+    private ArrayList<user> users = new ArrayList<>();
 
-    public void addUser(user user) {
+    public void addUser(user newUser) throws EmptyFieldException {
 
-        userArr.add(user);
+        if (newUser == null) {
+            throw new EmptyFieldException("User cannot be null.");
+        }
 
-        System.out.println("User registered successfully!");
+        if (newUser.getUserId() == null || newUser.getUserId().trim().isEmpty()) {
+            throw new EmptyFieldException("User ID cannot be empty.");
+        }
+
+        if (newUser.getName() == null || newUser.getName().trim().isEmpty()) {
+            throw new EmptyFieldException("User name cannot be empty.");
+        }
+
+        if (newUser.getEmail() == null || newUser.getEmail().trim().isEmpty()) {
+            throw new EmptyFieldException("User email cannot be empty.");
+        }
+
+        users.add(newUser);
     }
 
     public ArrayList<user> getAllUsers() {
-        return userArr;
+        return users;
     }
 
-    public user findUserById(String userId) {
+    public user findUserById(String userId) throws EmptyFieldException, UserNotFoundException {
 
-        for (user user : userArr) {
+        if (userId == null || userId.trim().isEmpty()) {
+            throw new EmptyFieldException("User ID cannot be empty.");
+        }
 
+        for (user user : users) {
             if (user.getUserId().equals(userId)) {
-
                 return user;
             }
         }
 
-        return null;
+        throw new UserNotFoundException("User not found with ID: " + userId);
     }
 }
