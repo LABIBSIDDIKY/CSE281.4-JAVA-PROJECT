@@ -74,6 +74,7 @@ Exception Handling: Custom exceptions (InvalidClaimException, DuplicateItemExcep
    
 |CLASS                    |DESCRIPTION                                                                          |
 --------------------------|-------------------------------------------------------------------------------------|
+| App                     |The main driver function that run all the other classes and methods  .               |
 | Item (abstract)         |Base class defining shared item fields.                                              |
 | LostItem                |Extends Item with lostLocation, rewardOffered, contactInfo.                          |
 | FoundItem               |Extends Item with foundLocation, storedAt, currentHolder.                            |
@@ -81,13 +82,11 @@ Exception Handling: Custom exceptions (InvalidClaimException, DuplicateItemExcep
 | Admin                   |Inherits from User with additional privileges (approve/reject claims).               |
 | ClaimStatus             |To verify if the item has been claimed, Approved or Pending                          |
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
-| authService             | To make sure that users don't accidentally get admin access                         |
-| ClaimService            |Making sure that the claim process is well documented and valid                      |
-| itemService             |Ensuring that the item input is valid  and no duplicates are made .                  |
-| ClaimRequest            |Links users and items through claim processing and validation.                       |
-| ClaimRequest            |Links users and items through claim processing and validation.                       |
-| ClaimRequest            |Links users and items through claim processing and validation.                       |
-| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| authService             | To make sure that users don't accidentally get admin access  .                      |
+| ClaimService            |Making sure that the claim process is well documented and valid via exception   .    |
+| itemService             |Ensuring that the item input is valid and no duplicates are made via exception  .    |
+| userService             |Ensuring that the user input is valid  and no duplicates are made via exception .    |
+
 
 
 
