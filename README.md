@@ -83,7 +83,7 @@ Exception Handling: Custom exceptions (InvalidClaimException, DuplicateItemExcep
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
 | authService             | To make sure that users don't accidentally get admin access                         |
 | ClaimService            |Making sure that the claim process is well documented and valid                      |
-| ClaimRequest            |Links users and items through claim processing and validation.                       |
+| itemService             |Ensuring that the item input is valid  and no duplicates are made .                  |
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
 | ClaimRequest            |Links users and items through claim processing and validation.                       |
